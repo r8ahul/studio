@@ -8,14 +8,46 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
 export function ProjectsSection() {
-  const projects: any[] = [];
+  const project1 = getImage('project1');
+  const project2 = getImage('project2');
+  const project3 = getImage('project3');
+
+  const projects = [
+    {
+      title: 'Project One',
+      description: 'This is a description of the first project. It highlights the key features and technologies used.',
+      tags: ['React', 'Next.js', 'Tailwind CSS'],
+      liveUrl: '#',
+      codeUrl: '#',
+      imageUrl: project1?.imageUrl,
+      imageHint: project1?.imageHint,
+    },
+    {
+      title: 'Project Two',
+      description: 'This is a description of the second project. It showcases another set of skills and a different problem.',
+      tags: ['TypeScript', 'Firebase', 'ShadCN UI'],
+      liveUrl: '#',
+      codeUrl: '#',
+      imageUrl: project2?.imageUrl,
+      imageHint: project2?.imageHint,
+    },
+    {
+      title: 'Project Three',
+      description: 'This is a description of the third project, demonstrating versatility and a passion for learning.',
+      tags: ['Genkit', 'AI', 'Zod'],
+      liveUrl: '#',
+      codeUrl: '#',
+      imageUrl: project3?.imageUrl,
+      imageHint: project3?.imageHint,
+    },
+  ];
 
   return (
-    <section id="projects" className="w-full py-16 md:py-24">
+    <section id="projects" className="w-full bg-muted/50 py-16 md:py-24">
       <div className="container mx-auto max-w-screen-lg px-4">
         <div className="mx-auto max-w-xl text-center">
           <h2 className="scroll-m-20 text-3xl font-extrabold tracking-tight text-primary lg:text-4xl">My Projects</h2>
-          <p className="mt-4 text-lg text-muted-foreground">A selection of my recent work. More coming soon!</p>
+          <p className="mt-4 text-lg text-muted-foreground">A selection of my recent work. You can replace these with your own projects.</p>
         </div>
         {projects.length > 0 && (
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
